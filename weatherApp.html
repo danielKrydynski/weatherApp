@@ -8,16 +8,53 @@
     <link rel="stylesheet" href="weatherApp.css">
 </head>
 <body>
-    <div class="container glassmorphism">
-        <h1>Weather App</h1>
-        <input type="text" id="locationInput" placeholder="Enter a city">
-        <button id="searchButton">Search</button>
-        <div class="weather-info">
-            <h2 id="location"></h2>
-            <p id="temperature"></p><span id="Fahrenheit"></span>
-            <p id="Fahrenheit"></p>
-            <p><img id="weather-icon" src="" alt="Weather Icon" style="display: none; margin: 0 auto;"></p>
-            <p id="description"></p>
+    <div class="main-wrapper">
+        <header class="app-header">
+            <h1><span class="weather-icon-main">🌦️</span> Weather App</h1>
+            <button id="darkModeToggle" class="fab-toggle" title="Toggle Dark/Light Mode">🌙</button>
+        </header>
+        <div class="dashboard-cards">
+            <div class="modern-card dashboard-card dashboard-card-main">
+                <div class="controls-row">
+                    <input type="text" id="locationInput" placeholder="Enter a city">
+                    <button id="searchButton" title="Search"><span>🔍</span></button>
+                    <button id="geoButton" title="Use My Location"><span>📍</span></button>
+                    <button id="saveFavorite" title="Save as Favorite"><span>⭐</span></button>
+                </div>
+                <div id="favorites-section" class="forecast-section">
+                    <h3>Favorites</h3>
+                    <div id="favorites-list"></div>
+                </div>
+            </div>
+            <div class="modern-card dashboard-card dashboard-card-current">
+                <div class="weather-info modern-weather-info">
+                    <div class="current-weather-card">
+                        <div class="current-main">
+                            <img id="weather-icon" src="" alt="Weather Icon" style="display: none; margin: 0 auto;">
+                            <div>
+                                <h2 id="location"></h2>
+                                <div class="current-temps">
+                                    <span id="temperature"></span>
+                                    <span id="Fahrenheit"></span>
+                                </div>
+                                <div id="description"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modern-card dashboard-card dashboard-card-hourly">
+                <div id="hourly-forecast" class="forecast-section">
+                    <h3><span>🕒</span> Next 24 Hours</h3>
+                    <div id="hourly-cards" class="forecast-cards"></div>
+                </div>
+            </div>
+            <div class="modern-card dashboard-card dashboard-card-daily">
+                <div id="daily-forecast" class="forecast-section">
+                    <h3><span>📅</span> 5-Day Forecast</h3>
+                    <div id="daily-cards" class="forecast-cards"></div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="weatherApp.js"></script>

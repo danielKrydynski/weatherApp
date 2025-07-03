@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Widget</title>
+    <link rel="stylesheet" href="weatherApp.css">
+    <style>
+        .widget-container {
+            max-width: 340px;
+            margin: 2rem auto;
+            border-radius: 1.2rem;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+            background: var(--card-bg, #fff);
+            padding: 1.5rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
+        }
+        .widget-current {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .widget-current img {
+            width: 64px;
+            height: 64px;
+        }
+        .widget-location {
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        .widget-temp {
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+        .widget-desc {
+            font-size: 1em;
+            color: #6366f1;
+        }
+        .widget-forecast {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            overflow-x: auto;
+            width: 100%;
+            justify-content: center;
+        }
+        .widget-forecast-card {
+            background: #f1f5f9;
+            border-radius: 8px;
+            padding: 8px 6px;
+            min-width: 60px;
+            text-align: center;
+            font-size: 0.95em;
+        }
+        .widget-forecast-card img {
+            width: 32px;
+            height: 32px;
+        }
+    </style>
+</head>
+<body>
+    <div class="widget-container">
+        <div class="widget-current">
+            <img id="widget-icon" src="" alt="Weather Icon" style="display:none;">
+            <div class="widget-location" id="widget-location"></div>
+            <div class="widget-temp" id="widget-temp"></div>
+            <div class="widget-desc" id="widget-desc"></div>
+        </div>
+        <div class="widget-forecast" id="widget-forecast"></div>
+        <a href="weatherApp.html" class="widget-dashboard-link" style="margin-top:0.5rem; text-decoration:none;">
+            <button style="padding: 0.6em 1.2em; border-radius: 0.7em; border: none; background: #6366f1; color: #fff; font-weight: 600; font-size: 1em; box-shadow: 0 2px 8px rgba(99,102,241,0.10); cursor: pointer; transition: background 0.2s;">Open Full Dashboard</button>
+        </a>
+    </div>
+    <script src="widget.js"></script>
+</body>
+</html>
